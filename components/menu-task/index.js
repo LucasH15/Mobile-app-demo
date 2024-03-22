@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import { Button } from "@rneui/themed";
 import { style } from "./style";
 
-const MenuTask = ({ isVisible, onDisapearCallBack, onDeleteCallBack, onChangeStatusCallBack }) => (
+const MenuTask = ({ isVisible, onDeleteCallBack, onChangeStatusCallBack }) => (
     <Modal
         isVisible={isVisible}
         animationIn="zoomInDown"

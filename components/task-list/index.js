@@ -3,10 +3,11 @@ import { TASK } from "../../model";
 import { APP_COLORS } from "../../styles/color";
 import { style } from "./style";
 
-const TaskList = ({ taskList, onPressCallBack }) => (
+const TaskList = ({ taskList, onPressCallBack, onLongPressCallBack }) => (
     <>
-        {taskList.map(({ id, content, status }) => (
-            <ListItem key={id} bottomDivider onPress={() => onPressCallBack(id)}>
+        {taskList.map(({ id, content, status }, index) => (
+            <ListItem key={id} bottomDivider onPress={() => onPressCallBack(taskList[index])}
+                      onLongPress={() => onLongPressCallBack(taskList[index])}>
                 <ListItem.Content style={style.taskItem}>
                     <ListItem.Title>{content}</ListItem.Title>
                     <Badge value={status}
